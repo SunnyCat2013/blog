@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.template import loader
 from article.models import Article
 
 # Create your views here.
@@ -8,6 +9,8 @@ def home(request):
 
 
 def detail(request, args):
+    # detect if args is well-format
+
     try:
         article_id = int(args) - 1
     except:
@@ -18,6 +21,6 @@ def detail(request, args):
         return HttpResponse("Invalid Article Number...")
 
     atc = Article.objects.all()[article_id]
-    #return_str = 'Title:\t%s\nCategory:\t%s\nDate:\t%s\nContent:\n%s\n' % (atc.title, atc.category, atc.date_time, atc.content)
-    #return HttpResponse(return_str)
-    return render(request, 'show_atc.html', {'title':atc.title})
+    template = loader.get_template('show_atc.html')
+    return_dict = {'title': atc.title, 'category': atc.category, 'date': atc.date_time, 'content': atc.content}
+    return HttpResponse(template.render(return_dict, request))
