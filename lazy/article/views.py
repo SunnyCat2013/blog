@@ -5,7 +5,9 @@ from article.models import Article
 
 # Create your views here.
 def home(request):
-    return HttpResponse("Hello Django, agian. ??")
+    template = loader.get_template('index.html')
+    #return HttpResponse("Hello Django, agian. ??")
+    return HttpResponse(template.render({}, request))
 
 
 def detail(request, args):
