@@ -33,7 +33,7 @@
                         <div>
                             <h3><a href="{{ blog.id }}">{{ blog.title}}</a></h3>
                             
-                            <p>{{ blog.date_time | date:"F j, Y" }}</p>
+                            <p>{{ blog.date_time | date:"Y, M, d: h:m:s" }}</p>
                         </div>
                     {% endfor %}
                 {% else %}
