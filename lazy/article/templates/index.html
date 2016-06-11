@@ -18,12 +18,28 @@
             <ul class="actions">
                 <li><a href="#" class="button">关于我</a></li>
             </ul>
-        <header/>
+        </header>
         <div id="main">
             <section id="one">
                 <header class="major">
                     <h2> This is a test.</h2>
+                    <img src="{% static 'article/imgs/under-construction.gif'%}" width=100% />
                 </header>
+            </section>
+            <section id="two">
+                <h2><b>近期博客</b></h2>
+                {% if blog_list %}
+                    {% for blog in blog_list %}
+                        <div>
+                            <h3><a href="{{ blog.id }}">{{ blog.title}}</a></h3>
+                            
+                            <p>{{ blog.date_time | date:"F j, Y" }}</p>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>哦噗，竟然还没有写博客。。。</p>
+                {% endif %}
+
             </section>
         </div>
 

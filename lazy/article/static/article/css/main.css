@@ -2468,13 +2468,13 @@
 		background-image: url("images/overlay.png"), url("../imgs/ruc_morning.jpg");
 		background-position: top left,							top left;
 		background-repeat: repeat,								no-repeat;
-		background-size: auto,								auto 100%;
-		color: rgba(255, 255, 255, 0.5);
+		background-size: 100% 100%,								100% 100%;
+		color: rgba(255, 255, 255, 1);
 		height: 100%;
 		left: 0;
-		padding: 8em 4em 0 0;
+		padding: 8em 4em 0 4em;
 		position: fixed;
-		text-align: right;
+		text-align: left;
 		top: 0;
 		width: 35%;
 	}
@@ -2552,6 +2552,10 @@
 		padding: 8em 4em 4em 4em;
 		width: calc(100% - 35%);
 	}
+		#main > img {
+			padding: 0 4em 0 4em;
+			position: inherit;
+		}
 
 		#main > section {
 			border-top: solid 2px #efefef;
