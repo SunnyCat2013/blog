@@ -2,30 +2,37 @@
 <!DOCTYPE HTML>
 <html>
     <head> 
-        <title>lizhenyang's blog</title>
-        <style>
-        html { 
-              background: url(images/bg.jpg) no-repeat center center fixed; 
-                -webkit-background-size: cover;
-                  -moz-background-size: cover;
-                    -o-background-size: cover;
-                      background-size: cover;
-        }
-        </style>
+        <title>Personal blog</title>
+        <meta charset="utf-8">
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'article/css/main.css' %}">
     <head>
 
-    <body background="/static/ruc_morning.jpg">
-        <br/>
-        <h1>早上好啊，人大！</h1>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <br/>
-        <h1>早上好啊，人大！</h1>
+    <body id="top">
+        <header id="header" style="background-position: left top, center center;">
+            <a href="#" class="image avatar">
+                <img src="/static/article/giraffe.jpg" height="100px" alt="咦，头像呢？" title="长颈鹿"/>
+            <a/>
+            <h1>我是<strong>cslzy</strong><br/>这是用Django搭建的一个简单的个人博客。</h1>
+            <h1><strong>如果喜欢，就拼尽全力去做。</strong></h1>
+            <ul class="actions">
+                <li><a href="#" class="button">关于我</a></li>
+            </ul>
+        <header/>
+        <div id="main">
+            <section id="one">
+                <header class="major">
+                    <h2> This is a test.</h2>
+                </header>
+            </section>
+        </div>
+
+        <footer id="footer">
+            <h2 align="left"> 联系我：</h2>
+            <ul class="icons">
+                <li><a href="http://blog.csdn.net/cy_tec" title="点击即可查看我的CSDN博客"><span class="label"><strong>CSDN博客</strong></span></a></li>
+                <li><a href="mailto:lizhenyang_2008@163.com" title="点击即可激活邮件程序"><span class="label"><strong>邮箱:&nbsp&nbsp&nbsp&nbsplizhenyang_2008@163.com</strong></span></a></li>
+            </ul>
+        </footer>
     </body>
 <html>
