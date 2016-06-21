@@ -31,9 +31,8 @@
                 {% if blog_list %}
                     {% for blog in blog_list %}
                         <div>
-                            <h3><a href="{{ blog.id }}">{{ blog.title}}</a></h3>
-                            
-                            <p>{{ blog.date_time | date:"Y, M, d: h:m:s" }}</p>
+                            <h3><a href="blogs/{{ blog.id }}">{{ blog.title}}</a></h3>
+                            <p>{{ blog.date_time | date:"Y, M, d: h:m:s" }} {{ blog.category }}</p>
                         </div>
                     {% endfor %}
                 {% else %}
