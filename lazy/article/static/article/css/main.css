@@ -2465,7 +2465,7 @@
 	#header {
 		background-color: #1f1815;
 		background-attachment: scroll,								fixed;
-		background-image: url("images/overlay.png"), url("../imgs/ruc_morning.jpg");
+		background-image: url("images/overlay.png"), url("https://coding.net/u/cslzy/p/static-resource/git/raw/master/img/ruc_morning.jpg");
 		background-position: top left,							top left;
 		background-repeat: repeat,								no-repeat;
 		background-size: 100% 100%,								100% 100%;
