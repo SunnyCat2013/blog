@@ -28,6 +28,13 @@ def detail(request, args):
 
     atc = Article.objects.get(id=article_id)
     template = loader.get_template('show_atc.html')
+
+    # show markdown text
+    #mfile = open('./../../django-markdown-deux.md', 'r').read()
+    #mfile = open('/Users/cslzy/python/Django/django-markdown-deux.md', 'r').read()
+    #atc.content = mfile
+
+
     return_dict = {'title': atc.title, 'category': atc.category, 'date': atc.date_time, 'content': atc.content}
     return HttpResponse(template.render(return_dict, request))
     #return HttpResponse(markdown(atc.content).encode('utf8'))
