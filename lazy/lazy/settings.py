@@ -31,7 +31,10 @@ if socket.gethostname() == 'localhost':
 else:
     DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [
+	'.sofamiri.com',
+	'localhost',
+]
 
 
 # Application definition
