@@ -3,6 +3,9 @@ from django.http import HttpResponse
 from django.template import loader
 from article.models import Article
 
+## change article text to html
+from markdown import markdown
+
 # Create your views here.
 def home(request):
     template = loader.get_template('index.html')
@@ -27,3 +30,4 @@ def detail(request, args):
     template = loader.get_template('show_atc.html')
     return_dict = {'title': atc.title, 'category': atc.category, 'date': atc.date_time, 'content': atc.content}
     return HttpResponse(template.render(return_dict, request))
+    #return HttpResponse(markdown(atc.content).encode('utf8'))

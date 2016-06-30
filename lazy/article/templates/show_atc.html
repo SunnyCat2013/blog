@@ -3,16 +3,9 @@
 <html>
     <head>
         <title>Show Articles</title>
-        <style>
-            body
-            {
-                background-color: green;
-            }
-            em
-            {
-                color: LightSeaGreen;
-            }
-        </style>
+        {% load staticfiles %}
+        {% load markdown_deux_tags %}
+        <link rel="stylesheet" href="{% static 'article/css/main.css' %}" type="text/css">
     </head>
 
     <body>
@@ -21,6 +14,12 @@
         <h5>Date&Time: <strong>{{ date }}</strong></h5>
         <br/>
         <h2>Content</h2>
-            <strong>{{ content }}</strong>
+            <strong>{{ content | markdown }}</strong>
+            <p>下面测试JavaScript
+                <script>
+                    document.write("test for js");
+                    document.write({{ content }});
+                </script>
+            </p>
     </body>
 </html>
