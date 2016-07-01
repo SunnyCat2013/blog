@@ -5,6 +5,7 @@
         <title>Show Articles</title>
         {% load staticfiles %}
         {% load markdown_deux_tags %}
+        {% load cslzy_app_markdown %}
         <link rel="stylesheet" href="{% static 'article/css/main.css' %}" type="text/css">
     </head>
 
@@ -14,12 +15,6 @@
         <h5>Date&Time: <strong>{{ date }}</strong></h5>
         <br/>
         <h2>Content</h2>
-            <strong>{{ content | markdown }}</strong>
-            <p>下面测试JavaScript
-                <script>
-                    document.write("test for js");
-                    document.write({{ content }});
-                </script>
-            </p>
+            {{ content | cslzy_markdown }}
     </body>
 </html>
