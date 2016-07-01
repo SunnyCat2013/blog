@@ -14,7 +14,7 @@ register = template.Library()
 @register.filter(is_safe=True)
 @stringfilter
 def cslzy_markdown(value):
-    extensions = ["nl2br", "tables", "fenced_code", "codehilite(css_class=highlight)", "toc", "sane_lists"]
+    extensions = ["codehilite","nl2br", "tables", "fenced_code", "codehilite(css_class=highlight)", "toc", "sane_lists"]
     return mark_safe(
              markdown.markdown(
              force_unicode(value),
