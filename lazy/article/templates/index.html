@@ -5,7 +5,7 @@
         <title>Personal blog</title>
         <meta charset="utf-8">
         {% load staticfiles %}
-        {% load markdown_deux_tags %}
+        {% load cslzy_app_markdown %}
         <link rel="stylesheet" href="{% static 'article/css/main.css' %}">
     <head>
 
@@ -35,7 +35,7 @@
                         <div>
                             <h3><a href="blogs/{{ blog.id }}">{{ blog.title}}</a></h3>
                             <p>{{ blog.date_time | date:"Y, M, d: h:m:s" }} {{ blog.category }}</p>
-                            {{ blog.content | markdown| truncatewords_html:20  }}
+                            {{ blog.content | cslzy_markdown| truncatewords_html:50  }}
                         </div>
                     {% endfor %}
                 {% else %}
