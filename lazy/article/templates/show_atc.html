@@ -6,15 +6,28 @@
         {% load staticfiles %}
         {% load markdown_deux_tags %}
         {% load cslzy_app_markdown %}
-        <link rel="stylesheet" href="{% static 'article/css/main.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'article/css/blog_page.css' %}" type="text/css">
+        <link rel="stylesheet" href="{% static 'article/css/blog_page_style.css' %}" type="text/css">
     </head>
 
     <body>
-        <h1 align="center">Title: <strong>{{ title }}</strong></h1>
-        <h5>Category: <strong>{{ category }}</strong></h5>
-        <h5>Date&Time: <strong>{{ date }}</strong></h5>
-        <br/>
-        <h2>Content</h2>
-            {{ content | cslzy_markdown }}
+        <div id="header">
+            <div id="nav">
+                <a href="/">主页</a>
+                <a href="/">分类</a>
+                <a href="/">友情链接</a>
+                <a href="/">关于我</a>
+            </div>
+        </div>
+        <div id="layout">
+            <div class="post detail_post">
+                <h1 class="title" align="center"> <strong>{{ title }}</strong></h1>
+                <h5>Category: <strong>{{ category }}</strong></h5>
+                <h5>Date&Time: <strong>{{ date }}</strong></h5>
+                <br/>
+                <h2>Content</h2>
+                    {{ content | cslzy_markdown }}
+            </div>
+        </div>
     </body>
 </html>
