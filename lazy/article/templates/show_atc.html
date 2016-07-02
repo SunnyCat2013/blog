@@ -35,6 +35,7 @@
                 {{ post.content | cslzy_markdown }}
             </div>
 
+            <p> the full url: {{ full_url }}</p>
             <!-- 多说评论框 start -->
             <div class="ds-thread" data-thread-key="{{ post.id }}" data-title="{{ post.title }}" data-url="{{ full_url }}"></div>
             <!-- 多说评论框 end -->
