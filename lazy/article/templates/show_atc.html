@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>{{ title }}</title>
+        <title>{{ post.title }}</title>
         {% load staticfiles %}
         {% load cslzy_app_markdown %}
         <link rel="stylesheet" href="{% static 'article/css/font-awesome.css' %}">
@@ -21,19 +21,36 @@
         </div>
         <div id="layout">
             <div class="post detail_post">
-                <h1 class="title" align="center"><i class="fa fa-leaf"></i>{{ title }}</h1>
+                <h1 class="title" align="center"><i class="fa fa-leaf"></i>{{ post.title }}</h1>
                 <div class="info">
                     <span class="date">
                         <i class="fa fa-clock-o"></i>
-                        {{ date }}
+                        {{ post.date_time }}
                     </span>
                     <span class="category">
                         <i class="fa fa-tag"></i>
-                        {{ category }}
+                        {{ post.category }}
                     </span>
                 </div>
-                {{ content | cslzy_markdown }}
+                {{ post.content | cslzy_markdown }}
             </div>
+
+            <!-- 多说评论框 start -->
+            <div class="ds-thread" data-thread-key="{{ post.id }}" data-title="{{ post.title }}" data-url="{{ full_url }}"></div>
+            <!-- 多说评论框 end -->
+            <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+                <script type="text/javascript">
+                var duoshuoQuery = {short_name:"sofamiri"};
+                    (function() {
+                        var ds = document.createElement('script');
+                        ds.type = 'text/javascript';ds.async = true;
+                        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+                        ds.charset = 'UTF-8';
+                        (document.getElementsByTagName('head')[0] 
+                         || document.getElementsByTagName('body')[0]).appendChild(ds);
+                    })();
+                </script>
+            <!-- 多说公共JS代码 end -->
         </div>
     </body>
 </html>

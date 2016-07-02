@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from django.template import loader
 from article.models import Article
 
+import socket
+
 ## change article text to html
 from markdown import markdown
 
@@ -34,7 +36,13 @@ def detail(request, args):
     #mfile = open('/Users/cslzy/python/Django/django-markdown-deux.md', 'r').read()
     #atc.content = mfile
 
+    urlPath = request.path
 
-    return_dict = {'title': atc.title, 'category': atc.category, 'date': atc.date_time, 'content': atc.content}
+    if socket.gethostname() == 'localhost':
+        urlPath = 'http://127.0.0.1:8000' + urlPath
+    else:
+        urlPath = 'http://www.sofamiri.com' + urlPath
+
+    return_dict = {'post':atc, 'full_url': urlPath}
     return HttpResponse(template.render(return_dict, request))
     #return HttpResponse(markdown(atc.content).encode('utf8'))
