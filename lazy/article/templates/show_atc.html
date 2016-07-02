@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Show Articles</title>
+        <title>{{ title }}</title>
         {% load staticfiles %}
         {% load cslzy_app_markdown %}
         <link rel="stylesheet" href="{% static 'article/css/font-awesome.css' %}">
@@ -13,7 +13,7 @@
     <body>
         <div id="header">
             <div id="nav">
-                <a href="/">主页</a>
+                <a href="/"><i class="fa fa-home"></i> 主页</a>
                 <a href="/">分类</a>
                 <a href="/">友情链接</a>
                 <a href="/">关于我</a>
@@ -31,7 +31,6 @@
                         <i class="fa fa-tag"></i>
                         {{ category }}
                     </span>
-                </div>
                 </div>
                 {{ content | cslzy_markdown }}
             </div>
