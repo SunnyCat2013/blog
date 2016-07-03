@@ -7,6 +7,7 @@
         {% load staticfiles %}
         {% load cslzy_app_markdown %}
         <link rel="stylesheet" href="{% static 'article/css/main.css' %}">
+        <link rel="stylesheet" href="{% static 'article/css/main_page_posts.css' %}">
     <head>
 
     <body id="top">
@@ -30,17 +31,23 @@
             </section>
             <section id="two">
                 <h2><b>近期博客</b></h2>
-                {% if blog_list %}
-                    {% for blog in blog_list %}
-                        <div>
-                            <h3><a href="blogs/{{ blog.id }}">{{ blog.title}}</a></h3>
-                            <p>{{ blog.date_time | date:"Y, M, d: h:m:s" }} {{ blog.category }}</p>
-                            {{ blog.content | cslzy_markdown| truncatewords_html:50  }}
-                        </div>
-                    {% endfor %}
-                {% else %}
-                    <p>哦噗，竟然还没有写博客。。。</p>
-                {% endif %}
+                <div id="posts">
+                    {% if blog_list %}
+                        {% for blog in blog_list %}
+                            <div class="post">
+                                <h2 class="title"><a href="blogs/{{ blog.id }}">{{ blog.title}}</a></h2>
+                                <div class="post_body">
+                                    {{ blog.content | cslzy_markdown| truncatewords_html:50  }}
+                                </div>
+                                <div class="info">
+                                    <p>{{ blog.date_time | date:"Y, M, d: h:m:s" }} {{ blog.category }}</p>
+                                </div>
+                            </div>
+                        {% endfor %}
+                    {% else %}
+                        <p>哦噗，竟然还没有写博客。。。</p>
+                    {% endif %}
+                </div>
 
             </section>
         </div>
