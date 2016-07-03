@@ -1566,7 +1566,7 @@
 		}
 
 	body, input, select, textarea {
-		color: #a2a2a2;
+		color: #000;
 		font-family: "Source Sans Pro", Helvetica, sans-serif;
 		font-size: 16pt;
 		font-weight: 400;
@@ -1579,8 +1579,9 @@
 		-ms-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
 		border-bottom: dotted 1px;
-		color: #49bf9d;
+		color: #000;
 		text-decoration: none;
+        border-bottom-color: transparent;
 	}
 
 		a:hover {

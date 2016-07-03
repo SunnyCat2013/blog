@@ -11,7 +11,12 @@
 
     .post .title{
         border-bottom: 2px solid #000;
-        font-size: 4em;
+        font-size: 3em;
+        color: #000;
+    }
+    
+    .post .title a{
+        text-decoration: none;
     }
 
     .post .title i{
@@ -31,4 +36,8 @@
         position: absolute;
         bottom: 1em;
         right: 1em;
+    }
+
+    .post .info .read_more a{
+        text-decoration: none;
     }
