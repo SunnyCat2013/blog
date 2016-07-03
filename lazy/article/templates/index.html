@@ -6,6 +6,7 @@
         <meta charset="utf-8">
         {% load staticfiles %}
         {% load cslzy_app_markdown %}
+        <link rel="stylesheet" href="{% static 'article/css/font-awesome.css' %}">
         <link rel="stylesheet" href="{% static 'article/css/main.css' %}">
         <link rel="stylesheet" href="{% static 'article/css/main_page_posts.css' %}">
     <head>
@@ -35,7 +36,7 @@
                     {% if blog_list %}
                         {% for blog in blog_list %}
                             <div class="post">
-                                <h2 class="title"><a href="blogs/{{ blog.id }}">{{ blog.title}}</a></h2>
+                                <h2 class="title"><a href="blogs/{{ blog.id }}"><i class="fa fa-leaf"></i>{{ blog.title}}</a></h2>
                                 <div class="post_body">
                                     {{ blog.content | cslzy_markdown| truncatewords_html:50  }}
                                 </div>

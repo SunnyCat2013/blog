@@ -1,3 +1,17 @@
 #posts .post{
     background: #ebebeb;
 }
+
+    .post{
+        position: relative;
+        letter-spacing: 1px;
+    }
+
+    .post .title{
+        font-size: 2.2em;
+    }
+
+    .post .title i{
+        font-size: 14px;
+        padding-right: 5px;
+    }
