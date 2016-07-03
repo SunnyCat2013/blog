@@ -1,8 +1,10 @@
 #posts .post{
-    background: #ebebeb;
+    background: #fff;
 }
 
     .post{
+        padding: 0 1em;
+        border-radius: 5px;
         position: relative;
         letter-spacing: 1px;
     }
