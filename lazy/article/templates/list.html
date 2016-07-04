@@ -1,0 +1,26 @@
+{% extends "atc_show_base.html" %}
+
+{% load staticfiles %}
+{% load cslzy_app_markdown %}
+    {% block content %}
+        <h2><b>近期博客</b></h2>
+        <div id="posts">
+            {% if blog_list %}
+                {% for blog in blog_list %}
+                    <div class="post">
+                        <h2 class="title"><a href="blogs/{{ blog.id }}"><i class="fa fa-leaf"></i>{{ blog.title}}</a></h2>
+                        <div class="info">
+                            <p><i class="fa fa-clock-o"></i>{{ blog.date_time | date:"Y, M, d: h:m:s" }}
+                            <i class="fa fa-tag"></i>{{ blog.category }}</p>
+                            <div class="read_more">
+                                <a href="blogs/{{ blog.id }}">>>更多...</a>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p>哦噗，竟然还没有写博客。。。</p>
+            {% endif %}
+        </div>
+
+    {% endblock %}
