@@ -6,7 +6,7 @@
         <div id="layout">
             {% if blog_list %}
                 {% for blog in blog_list %}
-                    <div class="post">
+                    <div class="post list">
                         <h2 class="title"><a href="/blogs/{{ blog.id }}"><i class="fa fa-leaf"></i>{{ blog.title}}</a></h2>
                         <div class="info">
                             <p><i class="fa fa-clock-o"></i>{{ blog.date_time | date:"Y, M, d: h:m:s" }}

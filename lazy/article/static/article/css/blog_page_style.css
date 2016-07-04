@@ -50,6 +50,20 @@ body {
       text-align: center;
       padding: 0.5em 0;
       margin-bottom: 25px; }
+
+  .list{
+    background-color: #e0e0e0;
+    position: relative;
+    margin: 2em 0;
+    letter-spacing: 1px; }
+
+      .list .title {
+          font-size: 2em;
+          line-height: 1.35em;
+          text-align: left;
+          padding: 0.5em 0;
+          margin-bottom: 25px; }
+
       .post .title a {
         color: #333; }
         .post .title a:hover {
@@ -228,6 +242,9 @@ body {
   -moz-transition: 0.25s;
   -o-transition: 0.25s;
   transition: 0.25s; }
+
+.list .title{
+}
 
   @media screen and (max-width: 768px) {
     #layout {
