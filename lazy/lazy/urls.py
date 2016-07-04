@@ -20,5 +20,6 @@ urlpatterns = [
     url(r'^$', 'article.views.home'),
     url(r'^blogs/(?P<args>\d+)/', 'article.views.detail'),
     url(r'^blogs/$', 'article.views.home'),
+    url(r'^list/$', 'article.views.atc_list'),
     url(r'^admin/', admin.site.urls),
 ]

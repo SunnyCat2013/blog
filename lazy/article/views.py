@@ -46,3 +46,10 @@ def detail(request, args):
     return_dict = {'post':atc, 'full_url': urlPath}
     return HttpResponse(template.render(return_dict, request))
     #return HttpResponse(markdown(atc.content).encode('utf8'))
+    
+
+def atc_list(request):
+    # detect if args is well-format
+    return HttpResponse("test article list...")
+
+
