@@ -31,11 +31,6 @@ def detail(request, args):
     atc = Article.objects.get(id=article_id)
     template = loader.get_template('show_atc.html')
 
-    # show markdown text
-    #mfile = open('./../../django-markdown-deux.md', 'r').read()
-    #mfile = open('/Users/cslzy/python/Django/django-markdown-deux.md', 'r').read()
-    #atc.content = mfile
-
     urlPath = request.path
 
     if socket.gethostname() == 'localhost':
@@ -49,7 +44,10 @@ def detail(request, args):
     
 
 def atc_list(request):
-    # detect if args is well-format
-    return HttpResponse("test article list...")
+    blog_list = Article.objects.all()
+    template = loader.get_template('list.html')
+
+    return_dict = {'blog_list':blog_list}
+    return HttpResponse(template.render(return_dict, request))
 
 
