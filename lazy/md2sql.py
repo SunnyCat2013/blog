@@ -9,7 +9,7 @@ from datetime import datetime
 
 sfile = 'db.sqlite3'
 
-def md2sql(title, category, content, atc_id=-1, date_time=datetime.now()):
+def md2sql(title, category, content, atc_id=-1, date_time=datetime.utcnow()):
     # backup database file
     shutil.copyfile(sfile, sfile + '.bak')
 
