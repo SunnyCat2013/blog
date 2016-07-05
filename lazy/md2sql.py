@@ -34,11 +34,28 @@ def md2sql(title, category, content, atc_id=-1, date_time=datetime.now()):
         shutil.copyfile(sfile + '.bak', sfile)
 
 
+def prepare_file():
+    mfile = open(sys.argv[1], 'r')
+    title = mfile.readline()
+    if not title.startswith('#title:'):
+        print '--!Error: title format is wrong!--'
+        return
+    else:
+        title = title[7:-1]
+        title = title.strip()
 
-if __name__ == '__main__':
-    title = open(sys.argv[1], 'r').readline().strip().strip('#')
-    cur_time = time.time()
-    category = 'Test blog'
-    content = open(sys.argv[1], 'r').read()
+    category = mfile.readline()
+    if not category.startswith('#category:'):
+        print '--!Error: category format is wrong!--'
+        return
+    else:
+        category = category[10:-1]
+        category = category.strip()
+
+    content = mfile.read()
 
     md2sql(title, category, content)
+
+
+if __name__ == '__main__':
+    prepare_file()
