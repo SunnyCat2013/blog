@@ -43,7 +43,7 @@
                                     {{ blog.content | cslzy_markdown| truncatewords_html:50  }}
                                 </div>
                                 <div class="info">
-                                    <p><i class="fa fa-clock-o"></i>{{ blog.date_time | date:"Y, M, d: h:m:s" }}
+                                    <p><i class="fa fa-clock-o"></i>{{ blog.date_time | date:"Y, M, d: H:i:s" }}
                                     <i class="fa fa-tag"></i>{{ blog.category }}</p>
                                     <div class="read_more">
                                         <a href="blogs/{{ blog.id }}">>>更多...</a>
