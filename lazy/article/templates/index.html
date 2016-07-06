@@ -26,8 +26,9 @@
         <div id="main">
             <section id="one">
                 <header class="major">
-                    <h2>网站建设中。。。</h2>
+                    <img src="http://www.styleonq.com.au/images/underconstruct.png" align="middle" width=100% />
                     <!--
+                    <img src="https://coding.net/u/cslzy/p/static-resource/git/raw/master/img/Free-Website-Under-Construction-PSD-Templates-08.png" align="middle" height=100% />
                     <img src="https://coding.net/u/cslzy/p/static-resource/git/raw/master/img/under-construction.gif" width=100% />
                     -->
                 </header>
@@ -40,7 +41,7 @@
                             <div class="post">
                                 <h2 class="title"><a href="blogs/{{ blog.id }}"><i class="fa fa-leaf"></i>{{ blog.title}}</a></h2>
                                 <div class="post_body">
-                                    {{ blog.content | cslzy_markdown| truncatewords_html:50  }}
+                                    {{ blog.content | cslzy_markdown| truncatewords_html:20  }}
                                 </div>
                                 <div class="info">
                                     <p><i class="fa fa-clock-o"></i>{{ blog.date_time | date:"Y, M, d: H:i:s e" }}
