@@ -45,7 +45,14 @@
                                 </div>
                                 <div class="info">
                                     <p><i class="fa fa-clock-o"></i>{{ blog.date_time | date:"Y, M, d: H:i:s e" }}
-                                    <i class="fa fa-tag"></i>{{ blog.category }}</p>
+                                    <i class="fa fa-tag"></i>{{ blog.category }}
+                                    {% if blog.tags.all  %}
+                                        {% for t in blog.tags.all %}
+                                            <a>{{ t }};</a>
+                                        {% endfor %}
+                                    {% endif %}
+
+                                    </p>
                                     <div class="read_more">
                                         <a href="blogs/{{ blog.id }}">>>更多...</a>
                                     </div>
