@@ -12,8 +12,16 @@
                         {{ post.date_time }}
                     </span>
                     <span class="category">
-                        <i class="fa fa-tag"></i>
+                        <i class="fa fa-folder-o"></i>
                         {{ post.category }}
+                    </span>
+                    <span class="tags">
+                        {% if post.tags.all  %}
+                            <i class="fa fa-tag"></i>
+                            {% for t in post.tags.all %}
+                                <a>{{ t }};</a>
+                            {% endfor %}
+                        {% endif %}
                     </span>
                 </div>
                 {{ post.content | cslzy_markdown }}
