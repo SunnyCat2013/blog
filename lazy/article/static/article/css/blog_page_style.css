@@ -117,8 +117,8 @@ body {
         padding: 2px;
         margin-right: 5px; }
         .post .info .tags a:hover {
-          color: white;
-          background: #ca2f33; }
+          color: #49bf9d;
+          background: #fff; }
       .post .info .read_more {
         padding: 0;
         position: absolute;

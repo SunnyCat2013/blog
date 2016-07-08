@@ -155,7 +155,7 @@ p a{
 }
 
 a:hover{
-    color: #E60900;
+    color: #49bf9d;
 }
 
 strong {
@@ -409,8 +409,8 @@ table.codehilitetable{
 
 
 #fb_new_comment .c_button:hover {
-    background: #E60900;
-    color: #fff;
+    background: #fff;
+    color: #49bf9d;
     text-decoration: none;
 }
 
