@@ -50,4 +50,8 @@ def atc_list(request):
     return_dict = {'blog_list':blog_list}
     return HttpResponse(template.render(return_dict, request))
 
+def friends(request):
+    template = loader.get_template('friends.html')
+    return HttpResponse(template.render({}, request))
+
 
