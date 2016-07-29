@@ -26,7 +26,7 @@ TEMPLATE_DIRS = (
 SECRET_KEY = 'q)p+j501l1ir#bz!atp+!-j-hi!u6+)ow^&)o_6byxj9qd%to!'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-if socket.gethostname() == 'localhost':
+if socket.gethostname() == 'cslzy-Air.local':
     DEBUG = True
 else:
     DEBUG = False
