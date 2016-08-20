@@ -22,5 +22,6 @@ urlpatterns = [
     url(r'^blogs/$', 'article.views.home'),
     url(r'^list/$', 'article.views.atc_list'),
     url(r'^friends/$', 'article.views.friends'),
+    url(r'^toys/$', 'article.views.toys'),
     url(r'^admin/', admin.site.urls),
 ]
